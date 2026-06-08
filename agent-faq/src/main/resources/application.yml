@@ -1,0 +1,29 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: agent-faq
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/memorydb
+
+langchain4j:
+  # ——— Chat 模型配置 —————————————————————————————
+  chat-model:
+    provider: dashscope
+    dashscope:
+      chat-model:
+        api-key: ${DASHSCOPE_API_KEY}
+        model-name: qwen-turbo
+        streaming: true
+
+  # ——— Embedding 模型配置 ————————————————————————————
+  dashscope:
+    embedding:
+      api-key: ${DASHSCOPE_API_KEY}
+      model-name: text-embedding-v3
+
+milvus:
+  host: localhost
+  port: 19530

@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: agent-hello
+langchain4j:
+  chat-model:
+    provider: dashscope
+    dashscope:
+      chat-model:
+        api-key: ${DASHSCOPE_API_KEY}
+        model-name: qwen-turbo
+        streaming: true  # ✅ 加上这一行
